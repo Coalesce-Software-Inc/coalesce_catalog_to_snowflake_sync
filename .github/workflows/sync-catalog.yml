@@ -3,8 +3,8 @@ name: Coalesce Catalog to Snowflake Sync
 on:
   workflow_dispatch:
   # To enable scheduled runs, uncomment the next two lines:
-  # schedule:
-  #   - cron: '0 2 * * *'
+  schedule:
+    - cron: '0 2 * * *'
     inputs:
       force_all:
         description: 'Treat all tags as NEW (ignore sync history)'
