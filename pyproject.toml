@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "coalesce-catalog-to-snowflake-sync"
+version = "1.0.0"
+description = "Coalesce Catalog to Snowflake Sync - Extract tags and generate Snowflake ALTER statements"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    {name = "Coalesce", email = "support@coalesce.io"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+dependencies = [
+    "requests>=2.31.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+    "pylint",
+]
+
+[project.scripts]
+catalog-tags = "main:main"
+
+[tool.setuptools.packages.find]
+include = ["catalog_to_snowflake*"]
